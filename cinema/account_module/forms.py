@@ -1,23 +1,21 @@
 from django import forms
-from .models import User
 from django.core.exceptions import ValidationError
 from django.core import validators
 
 
-class loginModelForm(forms.ModelForm):
-    class Meta:
-        model = User
-        fields = ["username", "password"]
-        labels = {"username": "نام کاربری", "password": "رمز"}
-        help_texts = {"username": None}
-        widgets = {
-            "username": forms.TextInput(
-                attrs={"placeholder": "لطفا نام کاربری خود را وارد کنبد"}
-            ),
-            "password": forms.PasswordInput(
-                attrs={"placeholder": "لطفا رمز خود را وارد کنبد"}
-            ),
-        }
+class loginForm(forms.Form):
+    user_name = forms.CharField(
+        validators=[validators.MaxLengthValidator(100)],
+        widget=forms.TextInput(attrs={'placeholder':'نام کاربری','class':'center pop'}),
+        label="نام کاربری",
+    )
+    password = forms.CharField(
+        validators=[
+            validators.MaxLengthValidator(100),
+        ],
+        widget=forms.PasswordInput(attrs={'placeholder':' رمز عبور','class':'center pop'}),
+        label="رمز عبور",
+    )
 
 
 class RegisterModelForm(forms.Form):

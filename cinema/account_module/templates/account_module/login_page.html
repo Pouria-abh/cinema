@@ -1,10 +1,33 @@
 {% extends "shared/base.html" %}
+{% load static %}
 
 {% block title %}صفحه لاگین{% endblock  %}
+
+{% block header_ref %}
+<link rel="stylesheet" href="{% static 'account_module/user.css' %}">
+{% endblock  %}
 
 {% block content %}
 
 
-{{login_form.as_p}}
+ <div class="first">
+
+        <form action="" method="post">
+            {% csrf_token %}
+           
+            {{login_form.user_name.label_tag}}
+            {{login_form.user_name}}
+            {{login_form.user_name.errors}}
+
+            {{login_form.password.label_tag}}
+            {{login_form.password}}
+            {{login_form.password.errors}}
+
+            <button type="submit" class="register">ورود</button>
+            <p class="Log"><a class="even  link" href="{% url 'register_page' %}">ثبت نام کنید</a></p>
+
+        </form>
+    </div>
+
 
 {% endblock  %}
