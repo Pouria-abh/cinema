@@ -1,0 +1,92 @@
+
+.first {
+    margin: auto;
+    margin-top: 100px;
+    padding: 30px;
+    width: 320px;
+    height: 415px;
+    background-color: white;
+    border-radius: 15px;
+    vertical-align: middle;
+}
+
+
+
+
+.center {
+    width: 80%;
+    border: none;
+    border-bottom: 2px solid rgb(118, 189, 210);
+    padding: 10px;
+    margin: 15px 20px;
+
+
+}
+
+.even {
+    text-decoration: none;
+
+}
+
+
+.dark {
+
+    color: #5a5a5a;
+    margin-left: 33%;
+    line-height: 60px;
+    padding: 0;
+}
+
+.blue {
+    color: rgb(25, 151, 189);
+    margin-left: 34%;
+    line-height: 15px;
+    padding: 0;
+}
+
+.link {
+    color: rgb(20, 122, 190);
+}
+
+.Log {
+    text-align: center;
+    font-size: 18px;
+    font-style: italic;
+}
+
+input {
+    cursor: pointer;
+    outline: none;
+   
+
+}
+
+.register {
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-right: 21px;
+    padding: 12px 120px;
+    background: rgb(118, 189, 210);
+    background: linear-gradient(90deg, rgba(118, 189, 210, 1) 10%, rgba(26, 120, 236, 1) 100%, rgba(15, 15, 201, 1) 100%);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    transition: background-color 3s ;
+
+}
+
+button:hover {
+    
+    background: rgb(36, 117, 217);
+    background: linear-gradient(90deg, rgba(36, 117, 217, 1) 0%, rgba(11, 107, 223, 1) 7%, rgba(136, 204, 224, 1) 100%);
+
+}
+
+
+.pop:focus {
+    border: none;
+    border-bottom: 3px solid rgb(118, 189, 210);
+    transition: width 5s;
+}
+

@@ -1,0 +1,51 @@
+{% extends "shared/base.html" %}
+{% load static %}
+
+{% block title %}ثبت نام{% endblock  %}
+
+{% block header_ref %}
+<link rel="stylesheet" href="{% static 'account_module/register.css' %}">
+{% endblock  %}
+
+{% block content %}
+
+ <div class="first">
+
+        <form action="" method="post">
+            {% csrf_token %}
+            {% comment %} <p class="Log"><a class="even  link" href="#">Login</a> Your Account</p>
+
+            <input id="user" class="center  pop" type="text" placeholder="UserName" required>
+
+            <input id="emil" class="center  pop" type="text" placeholder="Your email" required>
+
+           <input id="pass" class="center pop" type="password" placeholder="Password" required> 
+
+            <button onclick="check()" class="login">Login</button>
+
+
+            <a class="dark  even " href="#">Forget Password?</a>
+
+            <a class="blue  even " href="#">Create Account</a> {% endcomment %}
+            {{register_form.user_name.label_tag}}
+            {{register_form.user_name}}
+
+            {{register_form.password.label_tag}}
+            {{register_form.password}}
+
+           {{register_form.confirm_password.label_tag}}
+            {{register_form.confirm_password}} 
+            
+
+            
+
+            
+            <p class="Log">ورود به حساب <a class="even  link" href="#">کاربری</a></p>
+
+
+            <button type="submit" class="register">ثبت</button>
+
+        </form>
+    </div>
+
+{% endblock  %}

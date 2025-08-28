@@ -1,0 +1,6 @@
+body {
+    background: rgb(118, 189, 210);
+    background: linear-gradient(90deg, rgba(118, 189, 210, 1) 10%, rgba(26, 120, 236, 1) 100%, rgba(15, 15, 201, 1) 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    direction: rtl;
+}
