@@ -1,0 +1,17 @@
+# محیط مجازی پایتون
+venv/
+
+# فایل‌های کش‌شده پایتون
+__pycache__/
+*.py[cod]
+
+# فایل‌های پایگاه داده
+*.sqlite3
+
+# فایل‌های media و static
+media/
+staticfiles/
+
+# فایل‌های تنظیمات VS Code
+.vscode/
+
