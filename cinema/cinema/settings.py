@@ -39,7 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'account_module',
     'booking_module',
-    'home_module'
+    'home_module',
+    'django_render_partial',
+    'jalali_date',
+    'polls',
+    
 ]
 
 MIDDLEWARE = [
@@ -107,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fa-IR'
 
 TIME_ZONE = 'UTC'
 
@@ -120,6 +124,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+MEDIA_URL = '/medias/'
+MEDIA_ROOT = BASE_DIR / 'uploads'
 
 STATICFILES_DIRS=[BASE_DIR / 'static']
 
@@ -127,3 +133,25 @@ STATICFILES_DIRS=[BASE_DIR / 'static']
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+# default settings (optional)
+JALALI_DATE_DEFAULTS = {
+   # if change it to true then all dates of the list_display will convert to the Jalali.
+   'LIST_DISPLAY_AUTO_CONVERT': False,
+   'Strftime': {
+        'date': '%y/%m/%d',
+        'datetime': '%H:%M _ %y/%m/%d',
+    },
+    'Static': {
+        'js': [
+            'admin/js/django_jalali.min.js',
+        ],
+        'css': {
+            'all': [
+              'admin/css/django_jalali.min.css',
+            ]
+        }
+    },
+}

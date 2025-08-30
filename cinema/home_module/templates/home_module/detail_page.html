@@ -1,0 +1,63 @@
+{% extends 'shared/base.html' %}
+{% load static %} 
+{% load poll_extras %} 
+
+{%block title %} {{ movie.title }} {% endblock %}
+
+{% block header_ref %}
+<link rel="stylesheet" href="{% static 'detail_page.css' %}" />
+{% endblock %} 
+
+{% block content %}
+
+<div class="container">
+  <h1>فیلم {{ movie.title }}</h1>
+
+  {% if movie.image %}
+  <div class="poster">
+    <img src="{{ movie.image.url }}" alt="پوستر فیلم" />
+  </div>
+  {% endif %}
+
+  <p>
+    <strong>زمان پخش:</strong>
+    {% for showtime in showtimes %} 
+      
+     <span>
+      
+     {{showtime.get_jalali_time}}   -  {{showtime.get_jalali_create_date|date:"Y/m/d"}} 
+      
+    </span>
+      
+      {% endfor %}
+
+
+
+    
+  </p>
+
+  <div class="genres">
+    <strong>ژانر:</strong>
+    {% for genre in movie.gener.all %}
+    <span>{{ genre.title }}</span>
+    {% empty %}
+    <span>ژانری ثبت نشده</span>
+    {% endfor %}
+  </div>
+
+  <hr />
+
+  <p><strong>داستان فیلم :</strong></p>
+  <p>{{ movie.short_description }}</p>
+
+  {% if not movie.is_expired %}
+  <p>
+    <strong><a href="">رزرو بلیط</a></strong>
+  </p>
+
+  {% else %}
+  <span>منقضی شده !</span>
+  {% endif %}
+</div>
+
+{% endblock %}

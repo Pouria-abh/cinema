@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.views.generic import CreateView , View
 from .forms import loginForm , RegisterModelForm
 from .models import User
-from django.contrib.auth import login
+from django.contrib.auth import login ,logout
 
 # Create your views here.
 
@@ -62,3 +62,8 @@ class Register_page(View):
         context={'register_form':register_form}
         return render(request,'account_module/register_page.html',context)
         
+class Logout_page(View):
+    def get(self,requset:HttpRequest):
+        logout(requset)
+        return redirect(reverse('login_page'))
+                

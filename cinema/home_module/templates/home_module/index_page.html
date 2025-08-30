@@ -3,36 +3,28 @@
 {% block title %}خانه| صفحه اصلی{% endblock  %}
 
 {% block content %}
-  <header>
-    <h1>🎬 خوش آمدید به سامانه بلیط سینما</h1>
-    <nav>
-      <a href="#">فیلم‌ها</a>
-      <a href="#">سانس‌ها</a>
-      {% if request.user.is_authenticated %}
-      <a href="#">پنل کاربری</a>
-      <a href="#">خروج</a>
-      {% else %}
-       <a href="{% url 'register_page' %}"><i class="fa fa-sign-in"></i> ثبت نام</a>
-       <a href="{% url 'login_page' %}"><i class="fa fa-sign-in"></i> ورود</a>
-      {% endif %}
-    </nav>
-  </header>
-
-  <main>
+<h2>فیلم‌های در حال اکران</h2>
+{% for movie in object_list %}
+<main>
     <section class="movies">
-      <h2>فیلم‌های در حال اکران</h2>
+      
       <div class="movie-card">
-        <img src="" alt="پوستر فیلم">
-        <h3>نام فیلم</h3>
-        <p>ژانر: اکشن</p>
+        {% if movie.image.url %}
+        <img src="{{movie.image.url}}" width="200px" alt="پوستر فیلم">
+        {% endif %}
+        <h3> فیلم {{movie.title}}</h3>
+        <p><strong> داستان فیلم : </strong>{{movie.short_description}}</p>
+        <p><strong><a href="{% url 'detail_page' movie.slug %}">جزییات</a></strong></p>
         <a href="">رزرو بلیط</a>
       </div>
-      <!-- کارت‌های بیشتر -->
+      
     </section>
   </main>
 
-  <footer>
-    <p>©️ 2025 سامانه بلیط سینما</p>
-  </footer>
+{% endfor %}
+
+
   
+
+
   {% endblock  %}

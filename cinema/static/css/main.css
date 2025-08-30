@@ -4,7 +4,6 @@ body {
     direction: rtl;
     margin: 0;
     padding: 0;
-   
     
 }
 
@@ -13,7 +12,7 @@ body {
 header {
   background-color: #222;
   color: white;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
   
    background: rgb(118, 189, 210);
@@ -22,7 +21,7 @@ header {
 footer{
     background-color: #222;
   color: white;
-  padding: 1rem;
+  padding: 2rem;
   text-align: right;
   
    background: rgb(118, 189, 210);
@@ -30,15 +29,40 @@ footer{
    margin-top:155px;
    
 }
+a{
+     text-decoration: none;
+     color: black;
+     transition: .3s ease ;
+     
+}
+
+a:hover{
+  color: rgb(201, 64, 40);
+  
+  
+}
 
 nav a {
+
   margin: 0 1rem;
   color: #ffcc00;
-  text-decoration: none;
+  transition: .1s linear ;
+  font-size: large;
+}
+
+nav a:hover{
+ 
+  color: #0c0c0b;
+  box-shadow:  2px 2px 2px #444444;
+  font-weight: bold;
+  background-color: #f9f9f9;
+  border-radius: 2px;
+  
 }
 
 .movies {
   padding: 2rem;
+  max-width: 1500px;
 }
 
 .movie-card {
