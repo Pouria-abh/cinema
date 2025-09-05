@@ -1,0 +1,52 @@
+{% extends "shared/base.html" %}
+{% load static %}
+
+{% block title %}فیلم ها{% endblock  %}
+
+{% block header_references %}
+
+<link rel="stylesheet" href="{% static 'booking_module/list_page.css' %}">
+{% endblock  %}
+
+{% block content %}
+
+
+
+
+
+
+
+<div class="contain">
+  <div class="movie-list">
+    {% for movie in object_list %}
+      <div class="movie-card-list">
+        <img src="{{ movie.image.url }}" alt="{{ movie.title }}">
+        <h3>{{ movie.title }}</h3>
+     <p><strong><a href="{% url 'detail_page' movie.slug %}">جزییات</a></strong></p>
+      </div>
+    {% endfor %}
+  </div>
+
+  <aside class="filter-panel">
+    
+  <h4>فیلترها</h4>
+  <h4>ژانر:</h4>
+  <div class="genre-scroll">
+    <ul class="genre-list">
+      {% for genre in geners %}
+      {% if forloop.first %}
+      <li ><a  href="{% url 'movie_list_page' %}" class="active">همه</a></li>
+      {% endif %}
+        <li ><a  href="{% url 'movie_list_by_gener' genre.url_title %}" class="active">{{ genre.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+      
+  </aside>
+</div>
+
+  
+
+
+{% endblock  %}
+

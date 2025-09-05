@@ -7,8 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <link rel="stylesheet" href="static/home_module/detail_page.css">
-    {% block header_ref %}{% endblock  %}
+    
+    {% block header_references %}{% endblock  %}
     <title>{% block title %}{% endblock  %}</title>
 
 </head>
@@ -16,5 +16,8 @@
     {% render_partial 'home_module.views.header_partial'  %}
     {% block content %}{% endblock  %}
      {% render_partial 'home_module.views.footer_partial'  %}
+
+
+     {% block footer_references %}{% endblock  %}
 </body>
 </html>
